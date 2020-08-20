@@ -11,6 +11,7 @@ describe("<App /> component tests", () => {
     expect(AppWrapper.find(AllItem)).toHaveLength(1);
 
   });
+  
   test("check if cart exists", () => {
     const AppWrapper = shallow(<App />)
 
