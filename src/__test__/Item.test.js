@@ -1,12 +1,12 @@
 import React from "react"
-import {shallow} from "enzyme"
+import {shallow, mount} from "enzyme"
 import Item from "../Item"
 
 describe("<Item /> check", ()=>{
     let ItemWrapper;
 
     beforeAll(()=>{
-        ItemWrapper = shallow(<Item item={{imgurl: "https://sg-test-11.slatic.net/p/mdc/862ffe45ece925628e4a1d6c52374ceb.png",
+        ItemWrapper = mount(<Item item={{imgurl: "https://sg-test-11.slatic.net/p/mdc/862ffe45ece925628e4a1d6c52374ceb.png",
         name: "coffee beans",
         price: 350
         }} 
@@ -29,4 +29,12 @@ describe("<Item /> check", ()=>{
         ItemWrapper.find(".showPrice").simulate("click");
         expect(ItemWrapper.find(".itemPrice")).toHaveLength(0);
     });
+
+    test("check if price is equal to price from props", ()=>{
+        ItemWrapper.find(".showPrice").simulate("click");
+
+        let price = ItemWrapper.prop("item").price
+        //check whats in the div with class .itemPrice
+        expect(Number(ItemWrapper.find(".itemPrice").text())).toBe(price);
+    })
 });
