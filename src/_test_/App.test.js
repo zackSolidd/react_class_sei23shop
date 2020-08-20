@@ -9,6 +9,12 @@ describe("<App /> component tests", () => {
     const AppWrapper = shallow(<App />)
 
     expect(AppWrapper.find(AllItem)).toHaveLength(1);
+
+  });
+  test("check if cart exists", () => {
+    const AppWrapper = shallow(<App />)
+
     expect(AppWrapper.find(Cart)).toHaveLength(1);
   });
+
 });
