@@ -9,7 +9,7 @@ describe("<Item /> check", ()=>{
         ItemWrapper = shallow(<Item item={{imgurl: "https://sg-test-11.slatic.net/p/mdc/862ffe45ece925628e4a1d6c52374ceb.png",
         name: "coffee beans",
         price: 350
-        }}
+        }} 
         />
         );
     });
